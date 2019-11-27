@@ -25,7 +25,7 @@ def main():
     except FileNotFoundError:
         print('Bestand niet gevonden')
     except TypeError:
-        print('je moeder')
+        print('verkeerde invoer')
 
 
 def lees_inhoud(bestands_naam):
