@@ -26,6 +26,8 @@ def main():
         print('Bestand niet gevonden')
     except TypeError:
         print('verkeerde invoer')
+    except PermissionError:
+        print('U heeft geen rechten')
 
 
 def lees_inhoud(bestands_naam):
@@ -73,6 +75,8 @@ def knipt(alpaca_seq):
                 print(naam, "knipt in sequentie")
     except FileNotFoundError:
         print('bestand niet gevonden')
+    except ValueError:
+        print('Verkeerd bestand')
 
 
 main()
