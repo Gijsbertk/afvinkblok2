@@ -1,0 +1,9 @@
+import matplotlib.pyplot as plt
+janssen = 5
+Berends = 5
+
+hoogte = [5, 5]
+naam = ['Berends', 'Janssen']
+
+plt.bar(range(len(hoogte)), hoogte, tick_label= naam )
+plt.show()

@@ -1,0 +1,22 @@
+import matplotlib.pyplot as plt
+patienten_csv = open('patienten.csv','r')
+header = patienten_csv.readline()
+patienten_lijst = list()
+
+for x in patienten_csv:
+    x = x.replace('\n','')
+    entry = x.split(',')
+    patienten_lijst.append(entry)
+
+lijst_patienten = list()
+lijst_med_a = list()
+
+for x in patienten_lijst:
+    lijst_patienten.append(x[0])
+    lijst_med_a.append(x[1])
+
+x = lijst_patienten
+y = lijst_med_a
+
+plt.plot(x, y)
+plt.show()

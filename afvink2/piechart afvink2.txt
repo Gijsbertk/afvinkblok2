@@ -1,0 +1,30 @@
+import matplotlib.pyplot as plt
+patienten_csv = open('patienten.csv','r')
+header = patienten_csv.readline()
+patienten_lijst = []
+
+for x in patienten_csv:
+    x = x.replace('\n','')
+    entry = x.split(',')
+    patienten_lijst.append(int(entry[2]))
+
+vijftig = 0
+veertig = 0
+dertig = 0
+
+lijst_med_b = []
+#
+for x in patienten_lijst:
+    if x >= 50:
+        vijftig += 1
+    elif x <50 and x >= 40:
+        veertig += 1
+    elif x < 40:
+        dertig += 1
+
+labels = 'dertig', 'veertig', 'vijftig'
+sizes = [dertig, veertig, vijftig]
+
+plt.pie(sizes, labels=labels)
+
+plt.show()

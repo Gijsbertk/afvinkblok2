@@ -1,0 +1,27 @@
+import matplotlib.pyplot as plt
+patienten_csv = open('patienten.csv','r')
+header = patienten_csv.readline()
+patienten_data = list()
+
+for x in patienten_csv:
+    x = x.replace('\n','')
+    entry = x.split(',')
+    patienten_data.append(entry)
+
+lijst_patienten = list()
+lijst_med_a = list()
+kleur_lijst = ()
+for x in patienten_data:
+    lijst_patienten.append(x[0])
+    lijst_med_a.append(int(x[1]))
+    if x[3] == "Janssen":
+        kleur_lijst += ('blue', )
+    if x[3] == "Berends":
+        kleur_lijst += ('red', )
+artsen = ['Janssen','Berends']
+hoogte = lijst_med_a
+naam = lijst_patienten
+
+plt.bar(range(len(hoogte)), hoogte, tick_label= naam , color=kleur_lijst)
+plt.legend
+plt.show()
