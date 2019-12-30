@@ -1,0 +1,34 @@
+import matplotlib.pyplot as plt
+yeast_csv = open('yeast_genes.csv','r')
+yeast_data = list()
+header = yeast_csv.readline()
+
+for x in yeast_csv:
+    x = x.replace('\n','')
+    entry = x.split(',')
+    yeast_data.append(entry)
+
+lijst_status = list()
+Verified = 0
+Dubious = 0
+NA = 0
+Uncharacterized = 0
+
+
+for x in yeast_data:
+    if x[1] == 'Dubious':
+        Dubious += int(1)
+    elif x[1] == 'Verified':
+        Verified += int(1)
+    elif x[1] == 'NA':
+        NA += int(1)
+    elif x[1] == 'Uncharacterized':
+        Uncharacterized += 1
+
+hoogte = [Dubious, Verified, NA, Uncharacterized ]
+naam = ['Dubious', 'Verified','NA','Uncharacterized']
+
+plt.bar(range(len(hoogte)), hoogte, tick_label= naam, label= ('Deze stafen geven het aantal genen aan met een status'))
+plt.title('Aantal gist genen met een bepaalde status')
+plt.legend
+plt.show()
