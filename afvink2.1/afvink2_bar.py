@@ -1,12 +1,14 @@
 import matplotlib.pyplot as plt
+#Auteur: Gijsbert Keja
+#Datum: November 2019
 def main():
     een()
-    """de main roept de funties aan """
+    """de main roept de funtie aan"""
 
 
 def een():
-    """vriabelen krijgt functie geeft de grfaiek waarde mee activeert hem en geeft labels"""
-
+    """Deze functie geeft 2 variabelen een waarde waarna deze in een lijst
+gepusht worden en gebruikt worden om de staafdiagram te maken en te weergeven"""
     janssen = 5
     Berends = 5
 
